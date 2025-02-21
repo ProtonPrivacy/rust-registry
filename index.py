@@ -10,7 +10,7 @@ crate_directory = "downloads"
 index_directory = "index"
 
 # Base URL of the (built) repository
-base_url = "https://xetql.github.io/registry"
+base_url = os.environ.get('CI_PAGES_URL', "http://localhost:8080")
 
 
 def compute_checksum(file_path):
