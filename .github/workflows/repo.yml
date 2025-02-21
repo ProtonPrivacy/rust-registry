@@ -32,7 +32,7 @@ jobs:
       - name: Build repository
         run: |
           REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}
-          export CI_PAGES_URL="https://${{ github.repository_owner }}.github.io/${REPO_NAME}/index/"
+          export CI_PAGES_URL="https://${{ github.repository_owner }}.github.io/${REPO_NAME}"
           export CI_PROJECT_PATH="${{ github.repository }}"
           python index.py
           python packages_info.py
