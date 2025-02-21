@@ -4,7 +4,7 @@ default:
 
 variables:
   RUST_REGISTRY_NAME: proton_public_internal
-
+  
 stages:
   - depcheck
   - build
@@ -32,8 +32,10 @@ repository:
     - python3 index.py
     - python3 packages_info.py
     - mkdir repo
+    - find downloads -name "*.json" -exec sed -i 's/shared\/registry/shared\/public-registry/g' {} \; 
     - cp -vr downloads index packages_info.json repo
     - cat index.html | sed "s+%REGISTRY_NAME%+$RUST_REGISTRY_NAME+g" | sed "s+%CI_URL%+$CI_PAGES_URL+g"  | sed "s+%PROJECTPATH%+$CI_PROJECT_PATH+g" > repo/404.html
+    
   artifacts:
     paths:
       - repo
