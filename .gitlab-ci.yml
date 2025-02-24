@@ -20,7 +20,8 @@ dependency_check:
     - python3 rewrite_deps.py --check-only --name-version "${CI_COMMIT_REF_NAME#package/}"
   allow_failure: false
   rules:
-    - when: always
+    - if: '$CI_COMMIT_REF_NAME =~ /^package\/.*-.*/' # execute only for package branch
+      when: always
     
 repository:
   stage: build
