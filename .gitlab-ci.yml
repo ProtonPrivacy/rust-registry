@@ -4,7 +4,25 @@ default:
 
 variables:
   RUST_REGISTRY_NAME: proton_public_internal
+  
+stages:
+  - depcheck
+  - build
+  - deploy
 
+dependency_check:
+  stage: depcheck
+  image: python:latest
+  before_script:
+    - apt-get update && apt-get -y install python3-pip
+    - pip3 install --upgrade pip && pip3 install packaging
+  script:
+    - python3 rewrite_deps.py --check-only --name-version "${CI_COMMIT_REF_NAME#package/}"
+  allow_failure: false
+  rules:
+    - if: '$CI_COMMIT_REF_NAME =~ /^package\/.*-.*/' # execute only for package branch
+      when: always
+    
 repository:
   stage: build
   image: python:latest
@@ -15,8 +33,10 @@ repository:
     - python3 index.py
     - python3 packages_info.py
     - mkdir repo
+    - find downloads -name "*.json" -exec sed -i 's/shared\/registry/shared\/public-registry/g' {} \; 
     - cp -vr downloads index packages_info.json repo
     - cat index.html | sed "s+%REGISTRY_NAME%+$RUST_REGISTRY_NAME+g" | sed "s+%CI_URL%+$CI_PAGES_URL+g"  | sed "s+%PROJECTPATH%+$CI_PROJECT_PATH+g" > repo/404.html
+    
   artifacts:
     paths:
       - repo
