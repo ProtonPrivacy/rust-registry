@@ -1,20 +1,19 @@
 <html>
 
 <body>
-    <p>
-        To use this registry, please add to your <code>.cargo/config.toml</code>:
-    </p>
-    <pre>
+  <p>
+    To use this registry, please add to your <code>.cargo/config.toml</code>:
+  </p>
+  <pre>
 [registries]
-%REGISTRY_NAME% = { index = "sparse+%CI_URL%/index" }
+%REGISTRY_NAME% = { index = "sparse+%CI_URL%/index/" }
 </pre>
 
-<p> To upload to this registry, set the <code> TARGET_PUBLIC_REGISTRY </code> to <code> true </code> </p>
-<pre>
+  <p> To upload to this registry, set the <code> PUBLISH_TO_PUBLIC_REGISTRY </code> to <code> true </code> </p>
+  <pre>
 variables:
-  TARGET_PUBLIC_REGISTRY: true
+  PUBLISH_TO_PUBLIC_REGISTRY: true
 </pre>
-
 
 </body>
 

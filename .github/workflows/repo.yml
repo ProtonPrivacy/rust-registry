@@ -2,7 +2,8 @@ name: Build and Deploy
 
 env:
   RUST_REGISTRY_NAME: proton_public
-
+  PRIVATE_REPO: sparse+https://rust.gitlab-pages.protontech.ch/shared/registry/index/
+  CNAME: rust-registry.proton.me
 on:
   push:
     branches:
@@ -31,14 +32,16 @@ jobs:
 
       - name: Build repository
         run: |
-          REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}
-          export CI_PAGES_URL="https://${{ github.repository_owner }}.github.io/${REPO_NAME}"
-          export CI_PROJECT_PATH="${{ github.repository }}"
+          CI_PAGES_URL="https://$CNAME"
+          CI_PROJECT_PATH="${{ github.repository }}"
+          PUBLIC_REPO="sparse+$CI_PAGES_URL/index/"
           python index.py
           python packages_info.py
           mkdir repo
+          find downloads -name "*.json" -exec sed -i 's|$PRIVATE_REPO|$PUBLIC_REPO|g' {} \;
           cp -vr downloads index packages_info.json repo
-          cat index.html | sed "s+%REGISTRY_NAME%+$RUST_REGISTRY_NAME+g" | sed "s+%CI_URL%+$CI_PAGES_URL+g"  | sed "s+%PROJECTPATH%+$CI_PROJECT_PATH+g" > repo/404.html
+          cat index.html | sed "s+%REGISTRY_NAME%+$RUST_REGISTRY_NAME+g" | sed "s+%CI_URL%+$CI_PAGES_URL+g"  > repo/404.html
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
