@@ -32,7 +32,7 @@ jobs:
 
       - name: Build repository
         run: |
-          CI_PAGES_URL="https://$CNAME"
+          export CI_PAGES_URL="https://$CNAME"
           CI_PROJECT_PATH="${{ github.repository }}"
           PUBLIC_REPO="sparse+$CI_PAGES_URL/index/"
           python index.py
