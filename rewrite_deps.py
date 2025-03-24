@@ -102,7 +102,9 @@ with open(metadata_file_path, 'r') as meta:
 
 # rewrite packages
 for package in meta['packages']:
-    
+    # if the package source is 'null'; it is a workspace member that should be skipped. Except the library under check.
+    if package['source'] == None and package['name'] != name:
+        continue
     package['id'] = rewrite_reg_if_possible(package['id'], download_content)
 
     if package['source'] == REGISTRY_PRIVATE:
