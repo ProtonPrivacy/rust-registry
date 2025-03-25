@@ -38,7 +38,7 @@ jobs:
           python index.py
           python packages_info.py
           mkdir repo
-          find downloads -name "*.json" -exec sed -i 's|$PRIVATE_REPO|$PUBLIC_REPO|g' {} \;
+          find downloads -name "*.json" -exec sed -i "s|$PRIVATE_REPO|$PUBLIC_REPO|g" {} \;
           cp -vr downloads index packages_info.json repo
           cat index.html | sed "s+%REGISTRY_NAME%+$RUST_REGISTRY_NAME+g" | sed "s+%CI_URL%+$CI_PAGES_URL+g"  > repo/404.html
 
