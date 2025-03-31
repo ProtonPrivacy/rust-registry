@@ -1,0 +1,12 @@
+
+* @lfasnacht @rtetaz @rlejeune @aboulmier
+
+# CRYPTO
+/downloads/gopenpgp-sys@* @lburkhal @rlee
+/downloads/proton-crypto@* @lburkhal @rlee
+/downloads/proton-crypto-account@* @lburkhal @rlee
+/downloads/proton-srp@* @lburkhal @rlee
+
+# VPN
+/downloads/muon*@* @lfasnacht @aboulmier
+
