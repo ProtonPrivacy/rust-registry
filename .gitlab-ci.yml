@@ -49,7 +49,7 @@ repository:
   stage: deploy
   dependencies:
     - repository
-  image: harbor.protontech.ch/docker.io/library/ruby:latest
+  image: $HARBOR_URL/docker.io/library/ruby:latest
   script:
     - cp repo/packages_info.json jekyll/_data/.
     - cp repo/404.html jekyll/_includes/.
