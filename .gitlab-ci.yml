@@ -47,6 +47,8 @@ repository:
 
 .common-pages:
   stage: deploy
+  tags:
+    - shared-medium
   dependencies:
     - repository
   image: $HARBOR_URL/docker.io/library/ruby:latest
