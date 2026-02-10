@@ -7,6 +7,7 @@
 /downloads/proton-crypto-account@* @crypto
 /downloads/proton-srp@* @crypto
 /downloads/proton-crypto-subtle@* @crypto
+/downloads/proton-rpgp@* @crypto
 
 # VPN
 /downloads/muon*@* @lfasnacht @aboulmier
