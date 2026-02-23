@@ -9,7 +9,9 @@
 /downloads/proton-crypto-subtle@* @crypto
 /downloads/proton-rpgp@* @crypto
 
+# Foundation
+downloads/proton-foundation-* @backend-team/foundation-team
+
 # VPN
 /downloads/muon*@* @lfasnacht @aboulmier
 /downloads/proton-vpn-binary-status*@* @ProtonVPN/groups/linux-developers
-
