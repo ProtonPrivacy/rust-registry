@@ -40,24 +40,6 @@ layout: default
         </td>
     </tr>
     <tr>
-        <td class="documentation">
-            {% if pkg.documentation %}
-            <a href="{{ pkg.documentation }}">documentation</a>
-            {% else %}
-            missing documentation
-            {% endif %}
-        </td>
-        <td class="repository">
-            {% if pkg.repository %}
-            <a href="{{ pkg.repository }}">repository</a>
-            {% else %}
-            no info on repository
-            {% endif %}
-        </td>
-        <td class="blank">
-        </td>
-    </tr>
-    <tr>
         <td colspan="3" class="authors">
             Authors: {{ pkg.authors }}
         </td>
