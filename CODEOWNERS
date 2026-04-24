@@ -22,4 +22,6 @@ downloads/proton-foundation-* @backend-team/foundation-team
 /downloads/proton-alternative-routing@* @lfasnacht @aboulmier
 /downloads/proton-vpn-socks-proxy@* @lfasnacht @aboulmier
 /downloads/proton-vpn-binary-status*@* @ProtonVPN/groups/linux-developers
+/downloads/proton-vpn-local-agent@* @lfasnacht @fduraffo
+/downloads/proton-vpn-rcrl@* @lfasnacht @aviaud @fduraffo
 
