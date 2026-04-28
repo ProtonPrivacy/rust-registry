@@ -25,4 +25,5 @@ downloads/proton-foundation-* @backend-team/foundation-team
 /downloads/proton-vpn-local-agent@* @lfasnacht @fduraffo
 /downloads/proton-vpn-rcrl@* @lfasnacht @aviaud @fduraffo
 /downloads/proton-vpn-utils@* @lfasnacht @fduraffo
+/downloads/proton-tls-parser@* @lfasnacht @aboulmier
 
