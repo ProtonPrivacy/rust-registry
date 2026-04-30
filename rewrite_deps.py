@@ -3,6 +3,7 @@ import os
 import sys 
 import json
 import argparse
+import re
 
 from packaging.specifiers import SpecifierSet
 from packaging.version import Version
@@ -88,7 +89,15 @@ args = parser.parse_args()
 
 name_dash_version = args.name_version
 
-name, version = name_dash_version.rsplit('-', 1)
+name_version_match = re.match(r"^(?P<name>.+)-(?P<version>\d+\.\d+\.\d+(?:[-+].+)?)$", name_dash_version)
+if name_version_match is None:
+    raise ValueError(
+        f"Could not parse --name-version '{name_dash_version}'. "
+        "Expected format: <crate-name>-<semver> (for example: my-crate-1.2.3-beta.1)."
+    )
+
+name = name_version_match.group("name")
+version = name_version_match.group("version")
 metadata_file_path = f"downloads/{name}@{version}.json"
 
 # read the download directory and build a dictionary mapping package to all known versions
