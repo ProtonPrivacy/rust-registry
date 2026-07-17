@@ -27,4 +27,4 @@ downloads/proton-foundation-* @backend-team/foundation-team
 /downloads/proton-vpn-utils@* @lfasnacht @fduraffo
 /downloads/proton-tls-parser@* @lfasnacht @aboulmier
 /downloads/proton-vpn-yaourt@* @lfasnacht @aboulmier
-
+/downloads/proton-vpn-haproxyv2@* @lfasnacht @fduraffo @ccharoll
