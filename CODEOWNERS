@@ -24,6 +24,7 @@ downloads/proton-foundation-* @backend-team/foundation-team
 /downloads/proton-vpn-binary-status*@* @ProtonVPN/groups/linux-developers
 /downloads/proton-vpn-local-agent@* @lfasnacht @fduraffo
 /downloads/proton-vpn-rcrl@* @lfasnacht @aviaud @fduraffo
+/downloads/proton-vpn-toolkit@* @lfasnacht @aboulmier @ccharoll @fduraffo
 /downloads/proton-vpn-utils@* @lfasnacht @fduraffo
 /downloads/proton-tls-parser@* @lfasnacht @aboulmier
 /downloads/proton-vpn-yaourt@* @lfasnacht @aboulmier
