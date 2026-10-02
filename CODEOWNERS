@@ -14,7 +14,7 @@ downloads/proton-foundation-* @backend-team/foundation-team
 
 # VPN
 /downloads/muon*@* @lfasnacht @aboulmier @tpalade
-/downloads/pvpnclient@* @lfasnacht @aboulmier
+/downloads/pvpnclient@* @lfasnacht @aboulmier @jbiggs @fduraffo
 /downloads/proton-boringtun*@* @lfasnacht @aboulmier
 /downloads/proton-pfff*@* @lfasnacht @aboulmier
 /downloads/proton-vpn-netstack@* @lfasnacht @aboulmier
@@ -23,7 +23,7 @@ downloads/proton-foundation-* @backend-team/foundation-team
 /downloads/proton-vpn-socks-proxy@* @lfasnacht @aboulmier
 /downloads/proton-vpn-binary-status*@* @ProtonVPN/groups/linux-developers
 /downloads/proton-vpn-local-agent@* @lfasnacht @fduraffo
-/downloads/proton-vpn-rcrl@* @lfasnacht @aviaud @fduraffo
+/downloads/proton-vpn-rcrl@* @lfasnacht @aviaud @aboulmier @fduraffo @jbiggs
 /downloads/proton-vpn-toolkit@* @lfasnacht @aboulmier @ccharoll @fduraffo
 /downloads/proton-vpn-utils@* @lfasnacht @fduraffo
 /downloads/proton-tls-parser@* @lfasnacht @aboulmier
