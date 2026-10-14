@@ -11,6 +11,8 @@
 
 # Foundation
 downloads/proton-foundation-* @backend-team/foundation-team
+/downloads/spedri@* @backend-team/foundation-team
+/downloads/spedri-*@* @backend-team/foundation-team
 
 # VPN
 /downloads/muon*@* @lfasnacht @aboulmier @tpalade
